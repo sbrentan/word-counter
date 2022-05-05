@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en-us">   
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <style>
+      table, td, th, tr{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      body{
+        text-align: center;
+      }
+    </style>
+    <title>Top Words</title>
+  </head>
+  
+  <body>
+    <h1>Top Words</h1><hr>
+    <table style="margin: 0 auto">
+      <tr><th>#</th><th>Word</th><th>Occurrences</th></tr>
+      {% for word in counter %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ word }}</td>
+        <td>{{ counter[word] }}</td>
+      </tr>
+      {% endfor %}
+    </table><hr>
+  </body> 
+</html>
