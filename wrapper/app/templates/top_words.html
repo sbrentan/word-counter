@@ -21,12 +21,15 @@
   <body>
     <h1>Top Words</h1><hr>
     <table style="margin: 0 auto">
-      <tr><th>#</th><th>Word</th><th>Occurrences</th></tr>
+      <tr><th>#</th><th>Word</th><th>Occurrences</th><th>References</th></tr>
       {% for word in counter %}
       <tr>
         <td>{{ loop.index }}</td>
         <td>{{ word }}</td>
         <td>{{ counter[word] }}</td>
+        <td>{% for occ in occurrences[word] %}
+          <a href="/download/{{ occ }}">{{ occ }}</a>
+        {% endfor %}</td>
       </tr>
       {% endfor %}
     </table><hr>

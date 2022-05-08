@@ -1,0 +1,76 @@
+inch 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc6 1_doc5 1_doc3 1_doc1
+minute 1_doc9 1_doc2 1_doc8 1_doc10 1_doc1 2_doc1
+note 1_doc9 1_doc8 1_doc10 1_doc4 1_doc7 1_doc5 1_doc3 1_doc1
+plan 1_doc9 1_doc2 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+strong 1_doc9 1_doc2 1_doc4 1_doc7 1_doc6 1_doc5 2_doc1
+laugh 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc3 1_doc1 2_doc1
+course 1_doc9 1_doc8 1_doc10 1_doc7 1_doc5 1_doc1 2_doc1
+deep 1_doc9 1_doc8 1_doc10 1_doc4 1_doc6 1_doc3 1_doc1 2_doc1
+drive 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+fall 1_doc9 1_doc8 1_doc7 1_doc5 1_doc3 1_doc1 2_doc1
+plane 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc3 1_doc1
+box 1_doc9 1_doc8 1_doc10 1_doc4 1_doc6 1_doc3 2_doc1
+star 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc3 2_doc1
+correct 1_doc9 1_doc2 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1
+warm 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+week 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1 2_doc1
+blue 1_doc9 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1 2_doc1
+foot 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc3 1_doc1 2_doc1
+ago 1_doc9 1_doc2 1_doc8 1_doc7 1_doc6 1_doc5 1_doc1
+dry 1_doc9 1_doc2 1_doc10 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+test 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+special 1_doc9 1_doc2 1_doc8 1_doc4 1_doc6 1_doc5 1_doc3 2_doc1
+object 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc1 2_doc1
+island 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1 2_doc1
+common 1_doc9 1_doc2 1_doc8 1_doc4 1_doc7 1_doc5 1_doc3 1_doc1 2_doc1
+pound 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1 2_doc1
+decide 1_doc9 1_doc2 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+teach 1_doc9 1_doc2 1_doc8 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+contain 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc3 1_doc1 2_doc1
+surface 1_doc9 1_doc2 1_doc8 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+dark 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1
+busy 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+moon 1_doc9 1_doc2 1_doc10 1_doc7 1_doc5 1_doc3 1_doc1 2_doc1
+possible 1_doc9 1_doc2 1_doc8 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+wonder 1_doc9 1_doc8 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+field 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+boat 1_doc9 1_doc2 1_doc8 1_doc4 1_doc5 1_doc1 2_doc1
+gave 1_doc9 1_doc10 1_doc4 1_doc7 1_doc5 1_doc3 1_doc1 2_doc1
+oh 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc1
+beauty 1_doc9 1_doc8 1_doc10 1_doc4 1_doc6 1_doc5 1_doc3 2_doc1
+stay 1_doc9 1_doc2 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1
+quick 1_doc9 1_doc2 1_doc8 1_doc10 1_doc7 1_doc5 1_doc3 1_doc1 2_doc1
+fact 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc5
+system 1_doc9 1_doc2 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1
+thousand 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc5 1_doc3 1_doc1
+nothing 1_doc9 1_doc2 1_doc8 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1
+record 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc6 1_doc5 1_doc3 2_doc1
+done 1_doc9 1_doc2 1_doc8 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3
+stead 1_doc9 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+multiply 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc5 2_doc1
+front 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+fly 1_doc9 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+lead 1_doc9 1_doc8 1_doc4 1_doc7
+able 1_doc9 1_doc8 1_doc10 1_doc4 1_doc7 1_doc5 1_doc3 2_doc1
+stood 1_doc9 1_doc2 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+street 1_doc9 1_doc10 1_doc3 2_doc1
+develop 1_doc2 1_doc4 1_doc7 1_doc6 1_doc3 1_doc1 2_doc1
+rest 1_doc2 1_doc8 1_doc10 1_doc6 1_doc1 2_doc1
+green 1_doc2 1_doc10 1_doc4 1_doc7 1_doc5 1_doc1 2_doc1
+figure 1_doc2 1_doc8 1_doc4 1_doc7 1_doc6 1_doc5 2_doc1
+wheel 1_doc2 1_doc8 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1
+cry 1_doc2 1_doc10 1_doc7 1_doc6 1_doc5 1_doc1 2_doc1
+mind 1_doc2 1_doc10 1_doc4 1_doc7 1_doc5 1_doc3 1_doc1
+tail 1_doc2 1_doc8 1_doc10 1_doc4 1_doc6 1_doc3 1_doc1
+produce 1_doc2 1_doc8 1_doc10 1_doc4 1_doc6 1_doc5 1_doc3 1_doc1
+noun 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc3 1_doc1 2_doc1
+behind 1_doc2 1_doc8 1_doc10 1_doc4 1_doc5 1_doc3
+wait 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3
+machine 1_doc2 1_doc8 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+full 1_doc2 1_doc8 1_doc10 1_doc4 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+ocean 1_doc8 1_doc10 1_doc6 1_doc5 1_doc1 2_doc1
+clear 1_doc8 1_doc7 1_doc6 1_doc3 1_doc1 2_doc1
+free 1_doc8 1_doc10 1_doc7 1_doc6 1_doc3 1_doc1 2_doc1
+final 1_doc8 1_doc10 1_doc7 1_doc6 1_doc5 1_doc3 2_doc1
+force 1_doc10 1_doc4 1_doc7 1_doc6 1_doc5 1_doc3 1_doc1 2_doc1
+gold 1_doc4 1_doc7 1_doc6 1_doc3 2_doc1
