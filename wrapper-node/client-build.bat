@@ -1,2 +1,0 @@
-docker build -t wrapper-node2 - < client.dockerfile
-docker run -d -p 56740:56740 --network=sample-net --name=wrapper-node2 -v C:/Users/Simone/Documents/Workspace/word-wrapper/wrapper-node:/app wrapper-node2

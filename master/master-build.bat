@@ -1,0 +1,2 @@
+docker build --build-arg EXP_PORT=57710 --build-arg SELF_NAME=%1 -t %1 - < master.dockerfile
+docker run -d -p 57710:57710 -p 57720:57720 -p 57730:57730 -p 57740:57740 --network=sample-net --name=%1 -v C:/Users/Simone/Documents/Workspace/word-wrapper/node:/node -v C:/Users/Simone/Documents/Workspace/word-wrapper/master:/master %1

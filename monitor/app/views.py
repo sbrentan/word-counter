@@ -6,6 +6,7 @@ import app.master_scripts.monitor as monitor
 import glob
 import os
 
+
 @app.route('/')
 def home():
    return "hello world!"
@@ -13,10 +14,12 @@ def home():
 @app.route('/top_words')
 def template():
 
-   monitor.send_command("send_data")
-   p = Process(target=monitor.receive)
-   p.start()
-   p.join()
+   accept_mode = os.environ['ACCEPT_MODE']
+   if(accept_mode == "active"):
+      monitor.send_command("send_data")
+      p = Process(target=monitor.receive)
+      p.start()
+      p.join()
 
    sc = monitor.read_counters()
    occ = monitor.read_occurrences()
@@ -31,7 +34,7 @@ def download(filename):
    p.start()
    p.join()
 
-   docs_folder = "app/master_scripts/documents/"
+   docs_folder = "/uploads/"
    file_found = ""
    files = glob.glob(docs_folder + '*')
    for f in files:
@@ -42,7 +45,7 @@ def download(filename):
 
    if(file_found):
       print(file_found)
-      return send_file(file_found.split("/",1)[1], as_attachment=True)
+      return send_file(file_found, as_attachment=True, attachment_filename=file_found.split("_")[-1])
    else:
       return "not found"
 
@@ -52,15 +55,17 @@ def download(filename):
 @app.route("/command/reset")
 def reset():
 
-   f = open("app/master_scripts/save/nodes.txt", "w")
+   f = open("/save/nodes.txt", "w")
    f.close()
-   f = open("app/master_scripts/save/command.txt", "w")
+   f = open("/save/command.txt", "w")
    f.write("0 none")
    f.close()
-   f = open("app/master_scripts/save/counters.txt", "w")
+   f = open("/save/counters.txt", "w")
    f.close()
-   f = open("app/master_scripts/save/occurrences.txt", "w")
+   f = open("/save/occurrences.txt", "w")
    f.close()
 
    return "Monitor reset"
 
+p = Process(target=monitor.main, args=(os.environ['ACCEPT_MODE'],))
+p.start()
