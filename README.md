@@ -63,5 +63,16 @@ bash node/client2-build.sh node2
 bash node/client3-build.sh node3
 ```
 This will create a new master named `master2` and two nodes connected to it named `node2` and `node3`.
+As the nodes and masters need to use different ports between each other on the same machine, 
+different script has been created to simplify the process of creation of the test.
+
+This time some documents has already been generated at node startups, respectively doc2.txt and doc3.txt for `node2` and `node3`
+
+Now after a while when `/top_words` is refreshed it's possible to see new documents in the *references* column and updated word counters.
+After the nodes started the documents were detected as generated data and send passively to the master node( `master2` ).
+The data, afterword, was sent to `monitor` and was updated
+
+
+
 
 
