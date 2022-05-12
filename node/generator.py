@@ -6,19 +6,19 @@ words = ["fly","fall","lead","cry","dark","machine","note","wait","plan","figure
 def generate(filename = ""):
 	folder = "/documents/"
 	rndm_name = filename == ""
-	i = 1
-	while True:
-		if(rndm_name):
-			filename = folder + "doc"+str(i)+".txt"
-		if(os.path.exists(filename)):
-			i += 1
-		else:
-			f = open(filename, "w")
-			for i in range(100):
-				f.write(random.choice(words) + " ")
-			break
-
+	if(filename == ""):
+		i = 1
+		while True:
+			filename = "doc"+str(i)+".txt"
+			if(os.path.exists(folder + filename)):
+				i += 1
+			else:
+				break
+	f = open(folder + filename, "w")
+	for k in range(100):
+		f.write(random.choice(words) + " ")
 	f.close()
+
 
 if __name__ == "__main__":
 	generate()

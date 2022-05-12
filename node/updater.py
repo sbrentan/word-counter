@@ -236,10 +236,11 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 	global node_id, last_cmd_code, master_ip, master_port, master_receive, master_receive_doc
 	load()
 
-	if("GENERATE" in os.environ and os.environ['GENERATE'] == 1):
-		print("Generating " + filename)
+	if("GENERATE" in os.environ):
+		print("Generating " + os.environ["GENERATE"])
 		import generator as gen
-		gen.generate(filename)
+		gen.generate(os.environ["GENERATE"])
+		print("file generated")
 
 	master_ip = master
 	master_receive = master_receive_fn
@@ -266,7 +267,7 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 	print("Master: " + master_ip + " " + str(master_port))
 	while True:
 
-		time.sleep(1)
+		time.sleep(0.5)
 		if(transmission_mode == "passive"):
 			passive_count += 1 #seconds passed after last update
 
@@ -324,7 +325,7 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 		serversocket.shutdown(2)
 		serversocket.close()
 
-		if(send or passive_count == 5):
+		if(send or passive_count == 3):
 			passive_count = 0
 			if(send):
 				send_data("active")
