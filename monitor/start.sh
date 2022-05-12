@@ -1,5 +1,5 @@
 docker build -t monitor monitor/
-p1=10
+p1=$1
 p2=$(( $1 + 10 ))
 p3=$(( $1 + 20 ))
 p4=$(( $1 + 30 ))
