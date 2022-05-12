@@ -70,7 +70,16 @@ This time some documents has already been generated at node startups, respective
 
 Now after a while when `/top_words` is refreshed it's possible to see new documents in the *references* column and updated word counters.
 After the nodes started the documents were detected as generated data and send passively to the master node( `master2` ).
-The data, afterword, was sent to `monitor` and was updated
+The data, afterword, is sent to `monitor` updated.
+
+The communication between the monitor and the masters so far has been `passive`, that means the data is uploaded automatically.
+With [http://localhost:56700/accept_mode/active](http://localhost:56700/accept_mode/active) it can be changed to `active`,
+so that the monitor actively asks and wait for the masters responses with the data updated. For this reason the page takes some more time to load.
+
+With [http://localhost:56700/accept_mode/passive](http://localhost:56700/accept_mode/passive) it can be reversed to `passive`.
+The only transmission mode it changes is the one between the monitor and the monitor children, so the say the masters.
+Whereas between the masters and their children the mode remains unchanged as passive.
+
 
 
 
