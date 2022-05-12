@@ -1,2 +1,2 @@
-docker build -t monitor .
-docker run -d -p 56700:80 -p 56710:56710 -p 56720:56720 -p 56730:56730 -p 56740:56740 --name=monitor --network=sample-net -v C:/Users/Simone/Documents/Workspace/word-wrapper/monitor:/monitor -v C:/Users/Simone/Documents/Workspace/word-wrapper/master:/master monitor
+docker build -t monitor monitor/
+docker run -d -p 56700:80 -p 56710:56710 -p 56720:56720 -p 56730:56730 -p 56740:56740 -e ACCEPT_MODE=passive --name=monitor --network=word-counter-net -v %cd%\monitor:/monitor -v %cd%\master:/master monitor

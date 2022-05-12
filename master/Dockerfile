@@ -11,13 +11,10 @@ RUN touch /save/occurrences.txt
 RUN echo 0 none > /save/command.txt
 WORKDIR /master
 
-ARG EXP_PORT=56710
-ARG MASTER_IP=monitor
-ARG MASTER_PORT=56710
-ARG SELF_NAME=localhost
-ENV EXP_PORT=$EXP_PORT
-ENV MASTER_IP=$MASTER_IP
-ENV MASTER_PORT=$MASTER_PORT
-ENV SELF_NAME=$SELF_NAME
+ENV EXP_PORT=56710
+ENV SELF_NAME=localhost
+ENV ACCEPT_MODE=passive
+ENV MASTER_IP=monitor
+ENV MASTER_PORT=56710
 
-ENTRYPOINT ["python", "monitor.py", "passive"]
+ENTRYPOINT python monitor.py $ACCEPT_MODE

@@ -27,14 +27,12 @@ def main(mode="active"):
    f.close()
 
    if not is_monitor:
-      import node.updater as node
+      sys.path.insert(1, '/node')
+      import updater as node
       self_name = os.environ['SELF_NAME']
       print("not is_monitor")
       p = Process(target=node.main, args=(master_node, receive, receive_document))
       p.start()
-   # else:
-   #    global monitor_port
-   #    monitor_port = int(os.environ['MONITOR_PORT'])
 
    if(accept_mode == "passive"):
       p = Process(target=passive_receive, args=())
@@ -218,6 +216,27 @@ def update_occurrences():
    for f in files:
        os.remove(f)
 
+def update_accept_mode(mode):
+   f = open("/save/accept_mode.txt", "r")
+   accept_mode = f.readline().strip()
+   f.close()
+   f = open("/save/accept_mode.txt", "w")
+   f.write(mode)
+   f.close()
+   os.environ['ACCEPT_MODE'] = mode
+   print("Changing accept_mode from "+ accept_mode + " to " + mode)
+   if(accept_mode == "active"):
+      if(mode == "passive"):
+         send_command("chng_mode passive")
+         print("a")
+         p = Process(target=passive_receive, args=())
+         print("b")
+         p.start()
+         print("c")
+   else:
+      if(mode == "active"):
+         send_command("chng_mode active")
+
 
 def receive_document(filename, send_cmd = False):
    if(send_cmd):
@@ -243,27 +262,39 @@ def passive_receive():
 
    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+   s.settimeout(5)
    s.bind((self_name, exp_port + 30))
    s.listen()
    print("Waiting passive connections")
    sys.stdout.flush()
    while(True):
 
-      c,a = s.accept()
-      node_id = str(int.from_bytes(c.recv(4), byteorder='big'))
-      print("Received passive node id " + node_id)
-      sys.stdout.flush()
+      try: 
+         c,a = s.accept() 
+         node_id = str(int.from_bytes(c.recv(4), byteorder='big'))
+         print("Received passive node id " + node_id)
+         sys.stdout.flush()
 
-      print("Receiving passive files")
-      sys.stdout.flush()
-      receive_file(node_id, c, "/save/counters/counter"+node_id+".txt")
-      receive_file(node_id, c, "/save/occurrences/occurrences"+node_id+".txt")
+         print("Receiving passive files")
+         sys.stdout.flush()
+         receive_file(node_id, c, "/save/counters/counter"+node_id+".txt")
+         receive_file(node_id, c, "/save/occurrences/occurrences"+node_id+".txt")
 
-      c.shutdown(2)
-      c.close()
+         c.shutdown(2)
+         c.close()
 
-      update_counters()
-      update_occurrences()
+         update_counters()
+         update_occurrences()
+      except socket.timeout:
+         f = open("/save/accept_mode.txt", "r")
+         accept_mode = f.readline().strip()
+         f.close()
+         # print("Socket timeout: accept_mode is " + accept_mode)
+         if(accept_mode != "passive"):
+            os.environ['ACCEPT_MODE'] = accept_mode
+            print("Exiting from passive receive...")
+            return
+         pass
 
    s.close()
 

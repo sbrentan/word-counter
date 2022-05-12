@@ -2,9 +2,12 @@ from app import app
 from flask import render_template
 from flask import send_file
 from multiprocessing import Process
-import app.master_scripts.monitor as monitor
 import glob
 import os
+
+import sys
+sys.path.insert(1, '/master')
+import monitor as monitor
 
 
 @app.route('/')
@@ -14,7 +17,11 @@ def home():
 @app.route('/top_words')
 def template():
 
-   accept_mode = os.environ['ACCEPT_MODE']
+   f = open("/save/accept_mode.txt", "r")
+   accept_mode = f.readline().strip()
+   f.close()
+   os.environ['ACCEPT_MODE'] = accept_mode
+   print("accept_mode is " + accept_mode)
    if(accept_mode == "active"):
       monitor.send_command("send_data")
       p = Process(target=monitor.receive)
@@ -24,7 +31,6 @@ def template():
    sc = monitor.read_counters()
    occ = monitor.read_occurrences()
    return render_template('top_words.html', counter=sc, occurrences=occ)
-
 
 
 @app.route('/download/<path:filename>')
@@ -49,6 +55,22 @@ def download(filename):
    else:
       return "not found"
 
+
+
+@app.route('/accept_mode/active')
+def change_mode():
+   p = Process(target=monitor.update_accept_mode, args=("active",))
+   p.start()
+   os.environ['ACCEPT_MODE'] = "active"
+   return "accept_mode changed to active"
+
+
+@app.route('/accept_mode/passive')
+def change_mode2():
+   p = Process(target=monitor.update_accept_mode, args=("passive",))
+   p.start()
+   os.environ['ACCEPT_MODE'] = "passive"
+   return "accept_mode changed to passive"
 
 
 

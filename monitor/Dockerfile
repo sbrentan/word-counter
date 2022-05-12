@@ -15,12 +15,8 @@ RUN touch /save/counters.txt
 RUN touch /save/occurrences.txt
 RUN echo 0 none > /save/command.txt
 
-ARG MONITOR_PORT=56700
-ARG EXP_PORT=56710
-ARG ACCEPT_MODE=active
-ENV MONITOR_PORT=$MONITOR_PORT
-ENV EXP_PORT=$EXP_PORT
-ENV ACCEPT_MODE=$ACCEPT_MODE
+ENV ACCEPT_MODE=passive
+ENV EXP_PORT=56710
 
 
 WORKDIR /monitor

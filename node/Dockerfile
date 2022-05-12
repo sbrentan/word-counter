@@ -4,9 +4,7 @@ RUN mkdir /documents
 RUN mkdir /save
 WORKDIR /node
 
-ARG MASTER_IP=master
-ARG MASTER_PORT=56710
-ENV MASTER_IP=$MASTER_IP
-ENV MASTER_PORT=$MASTER_PORT
+ENV MASTER_IP=master
+ENV MASTER_PORT=57710
 
 ENTRYPOINT ["python", "updater.py"]

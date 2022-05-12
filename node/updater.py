@@ -236,6 +236,11 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 	global node_id, last_cmd_code, master_ip, master_port, master_receive, master_receive_doc
 	load()
 
+	if("GENERATE" in os.environ and os.environ['GENERATE'] == 1):
+		print("Generating " + filename)
+		import generator as gen
+		gen.generate(filename)
+
 	master_ip = master
 	master_receive = master_receive_fn
 	master_receive_doc = master_receive_doc_fn
@@ -305,6 +310,14 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 					else:
 						print("Sending document...")
 						send_document(filename)
+			elif(cmd[0] == "chng_mode"):
+				print("Changing transmission_mode from " + transmission_mode + " to " + cmd[1])
+				transmission_mode = cmd[1]
+				if(transmission_mode == "active"):
+					passive_count = 0
+				f = open("/save/transmission_mode.txt", "w")
+				f.write(transmission_mode)
+				f.close()
 
 			last_cmd_code = cmd_code
 

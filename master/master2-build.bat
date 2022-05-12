@@ -1,2 +1,2 @@
-docker build --build-arg EXP_PORT=58710 --build-arg SELF_NAME=%1 -t %1 - < master.dockerfile
-docker run -d -p 58710:58710 -p 58720:58720 -p 58730:58730 -p 58740:58740 --network=sample-net --name=%1 -v C:/Users/Simone/Documents/Workspace/word-wrapper/node:/node -v C:/Users/Simone/Documents/Workspace/word-wrapper/master:/master %1
+docker build -t %1 master/
+docker run -d -p 58710:58710 -p 58720:58720 -p 58730:58730 -p 58740:58740 -e EXP_PORT=58710 -e SELF_NAME=%1 --network=word-counter-net --name=%1 -v %cd%\node:/node -v %cd%\master:/master %1

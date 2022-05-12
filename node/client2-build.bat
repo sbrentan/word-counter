@@ -1,2 +1,2 @@
-docker build --build-arg MASTER_IP=master2 --build-arg MASTER_PORT=58710 -t %1 - < client.dockerfile
-docker run -d --network=sample-net --name=%1 -v C:/Users/Simone/Documents/Workspace/word-wrapper/node:/node %1
+docker build -t %1 node/
+docker run -d --network=word-counter-net -e MASTER_IP=master2 -e MASTER_PORT=58710 -e GENERATE=doc2.txt --name=%1 -v %cd%\node:/node %1
