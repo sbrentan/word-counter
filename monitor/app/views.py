@@ -73,6 +73,17 @@ def change_mode2():
    return "accept_mode changed to passive"
 
 
+@app.route('/generate/on')
+def generate_on():
+   monitor.send_command("generate on")
+   return "Generate is now on"
+
+@app.route('/generate/off')
+def generate_off():
+   monitor.send_command("generate off")
+   return "Generate is now off"
+
+
 
 @app.route("/command/reset")
 def reset():

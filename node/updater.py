@@ -4,6 +4,7 @@ import os
 import glob
 import sys
 from collections import Counter
+from multiprocessing import Process
 
 
 ######### WORD COUNTER
@@ -101,6 +102,7 @@ def update_documents(node_id):
 is_master = True
 node_id = "0"
 last_cmd_code = 0
+generator_on = False
 # master_ip   = os.environ['MASTER_IP']
 master_port = int(os.environ['MASTER_PORT'])
 master_receive = 0
@@ -153,6 +155,15 @@ def send_document(filename, folder="/documents/"):
 	s.shutdown(2)
 	s.close()
 
+def send_command(command):
+   file = open("/save/command.txt", "r")
+   cmd_code, cmd_txt = file.readline().split(" ", 1)
+   file.close()
+   cmd_code = int(cmd_code) + 1
+
+   file = open("/save/command.txt", "w")
+   file.write(str(cmd_code) + " " + command)
+   file.close()
 
 def send_data(mode):
 	global node_id, master_ip, is_master, master_port, master_receive, new_document, transmission_mode
@@ -319,6 +330,20 @@ def main(master, master_receive_fn=0, master_receive_doc_fn=0):
 				f = open("/save/transmission_mode.txt", "w")
 				f.write(transmission_mode)
 				f.close()
+			elif(cmd[0] == "generate"):
+				global doc_generator, generator_on
+				if(cmd[1] == "on" and not generator_on):
+					generator_on = True
+					import generator as gen
+					doc_generator = Process(target=gen.generate, args=("", True))
+					doc_generator.start()
+				elif(cmd[1] == "off" and generator_on):
+					generator_on = False
+					doc_generator.terminate()
+					doc_generator.join()
+				global is_master
+				if(is_master):
+					send_command(cmd_txt)
 
 			last_cmd_code = cmd_code
 
