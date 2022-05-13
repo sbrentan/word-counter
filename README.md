@@ -55,7 +55,7 @@ call node/client3-build.bat node3 58700
 ```
 ### On Linux
 ```
-bash master/master2-build.sh master2 58700 56700
+bash master/master-build.sh master2 58700 56700
 bash node/client2-build.sh node2 58700
 bash node/client3-build.sh node3 58700
 ```
