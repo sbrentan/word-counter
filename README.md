@@ -41,9 +41,10 @@ Its web service is available on port 8080 at link [/top_words](http://localhost:
 At `node` startup, a document has already been generated. After a while the monitor should receive the data and show it on the page.
 The data generated for now is a simple one with just few words.
 
-Default data transmission mode is **passive**, that means that data will be uploaded to the master every 5 seconds(default), so to limit network usage.
-Therefore after refreshing the *top_words* page in 5 seconds the word list will be updated, showing the top words and for each word its *references*, 
-that is the files where the word has been found. Clicking on one of the names the document will be downloaded.
+Default data transmission mode is **passive**, that means that data will be uploaded to the master every 3 seconds(default), so to limit network usage.
+Therefore after refreshing the *top_words* page the words list will be updated, showing the top words and for each word its *references*, 
+that is the files where the word has been found. Clicking on one of the names the document will be downloaded. 
+The names of the documents are shown as: masterId_nodeId_documentName. In this way we can see from which node the document was uploaded.
 
 Now let's try with more masters and nodes. Run in order in the same directory as before:
 ### On Windows
@@ -77,6 +78,8 @@ With [/accept_mode/passive](http://localhost:8080/accept_mode/passive) it can be
 The only transmission mode it changes is the one between the monitor and the monitor children, so the say the masters.
 Whereas between the masters and their children the mode remains unchanged as passive.
 
+Finally with [/generate/on](http://localhost:8080/generate/on) we enable the continuous generation of documents on the nodes.
+Every node will start to generate documents every 5 seconds(default) and update it to their masters according to the transmission mode set.
 
 
 
